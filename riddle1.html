@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Riddle 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .riddle-form {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Add more CSS rules for colors, typography, shapes, and animations */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Riddle 1</h1>
+    </header>
+    <main>
+        <section class="riddle-form">
+            <form id="riddleForm">
+                <label for="answer">Enter your answer:</label>
+                <input type="text" id="answer" name="answer">
+                <button type="submit">Solve Riddle</button>
+            </form>
+        </section>
+        <section class="result" id="result"></section>
+    </main>
+    <script>
+        const form = document.getElementById('riddleForm');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const answer = document.getElementById('answer').value.toLowerCase();
+
+            if (answer === 'jjsmith') {
+                // Redirect to the next page
+                window.location.href = 'riddle2.html'; // Replace 'next_page.html' with the actual URL
+            } else {
+                resultDiv.textContent = 'Incorrect. Please try again.';
+                // Add animation to the result div
+                resultDiv.classList.add('show');
+            }
+        });
+    </script>
+</body>
+</html>
